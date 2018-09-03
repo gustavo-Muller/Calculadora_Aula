@@ -6,27 +6,28 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane fx:id="anpPrincipal" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="276.0" prefWidth="218.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.unialfa.aula.controller.CalculadoraController">
+<AnchorPane fx:id="anpPrincipal" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="353.0" prefWidth="219.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.unialfa.aula.controller.CalculadoraController">
    <children>
-      <FlowPane layoutX="6.0" layoutY="6.0" prefHeight="286.0" prefWidth="223.0" AnchorPane.bottomAnchor="-6.0" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="-6.0" AnchorPane.topAnchor="6.0">
+      <FlowPane layoutX="6.0" layoutY="6.0" prefHeight="333.0" prefWidth="221.0" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="-6.0" AnchorPane.topAnchor="6.0">
          <children>
+            <JFXTextField prefHeight="78.0" prefWidth="212.0" style="-fx-background-color: white;" />
             <TextField fx:id="txtPrincipal" prefHeight="75.0" prefWidth="212.0" style="-fx-border-color: gray;" />
-            <Button fx:id="btnSete" mnemonicParsing="false" onAction="#AdicioneNumero" prefHeight="48.0" prefWidth="53.0" style="-fx-background-color: lightgray; -fx-border-radius: 10;" text="7" />
-            <Button fx:id="btnOito" mnemonicParsing="false" onAction="#AdicioneNumero" prefHeight="48.0" prefWidth="53.0" style="-fx-background-color: lightgray; -fx-border-radius: 10;" text="8" />
-            <Button fx:id="btnNove" mnemonicParsing="false" onAction="#AdicioneNumero" prefHeight="48.0" prefWidth="53.0" style="-fx-background-color: lightgray; -fx-border-radius: 10;" text="9" />
-            <Button fx:id="btnMais" mnemonicParsing="false" onAction="#AdicioneOperadorMatematico" prefHeight="48.0" prefWidth="53.0" style="-fx-background-color: lightgray; -fx-border-radius: 10;" text="+" />
-            <Button fx:id="btnQuatro" mnemonicParsing="false" onAction="#AdicioneNumero" prefHeight="48.0" prefWidth="53.0" style="-fx-background-color: lightgray; -fx-border-radius: 10;" text="4" />
-            <Button fx:id="btnCinco" mnemonicParsing="false" onAction="#AdicioneNumero" prefHeight="48.0" prefWidth="53.0" style="-fx-background-color: lightgray; -fx-border-radius: 10;" text="5" />
-            <Button fx:id="btnSeis" mnemonicParsing="false" onAction="#AdicioneNumero" prefHeight="48.0" prefWidth="53.0" style="-fx-background-color: lightgray; -fx-border-radius: 10;" text="6" />
-            <Button fx:id="btnMenos" mnemonicParsing="false" onAction="#AdicioneOperadorMatematico" prefHeight="48.0" prefWidth="53.0" style="-fx-background-color: lightgray; -fx-border-radius: 10;" text="-" />
-            <Button fx:id="btnUm" mnemonicParsing="false" onAction="#AdicioneNumero" prefHeight="48.0" prefWidth="53.0" style="-fx-background-color: lightgray; -fx-border-radius: 10;" text="1" />
-            <Button fx:id="btnDois" mnemonicParsing="false" onAction="#AdicioneNumero" prefHeight="48.0" prefWidth="53.0" style="-fx-background-color: lightgray; -fx-border-radius: 10;" text="2" />
-            <Button fx:id="btnTres" mnemonicParsing="false" onAction="#AdicioneNumero" prefHeight="48.0" prefWidth="53.0" style="-fx-background-color: lightgray; -fx-border-radius: 10;" text="3" />
-            <Button fx:id="btnMultiplicar" mnemonicParsing="false" onAction="#AdicioneOperadorMatematico" prefHeight="48.0" prefWidth="53.0" style="-fx-background-color: lightgray; -fx-border-radius: 10;" text="*" />
-            <Button fx:id="btnIgual" mnemonicParsing="false" onAction="#Calcule" prefHeight="48.0" prefWidth="53.0" style="-fx-background-color: lightgray; -fx-border-radius: 10;" text="=" />
-            <Button fx:id="btnZero" mnemonicParsing="false" onAction="#AdicioneNumero" prefHeight="48.0" prefWidth="53.0" style="-fx-background-color: lightgray; -fx-border-radius: 10;" text="0" />
-            <Button fx:id="btnApagar" mnemonicParsing="false" onAction="#Apague" prefHeight="48.0" prefWidth="53.0" style="-fx-background-color: lightgray; -fx-border-radius: 10;" text="&lt;&lt;" />
-            <Button fx:id="btnDividir" mnemonicParsing="false" onAction="#AdicioneOperadorMatematico" prefHeight="48.0" prefWidth="53.0" style="-fx-background-color: lightgray; -fx-border-radius: 10;" text="/" />
+            <Button fx:id="btnSete" mnemonicParsing="false" onAction="#AdicioneNumero" prefHeight="48.0" prefWidth="53.0" style="-fx-border-radius: 10;" text="7" />
+            <Button fx:id="btnOito" mnemonicParsing="false" onAction="#AdicioneNumero" prefHeight="48.0" prefWidth="53.0" style="-fx-border-radius: 10;" text="8" />
+            <Button fx:id="btnNove" mnemonicParsing="false" onAction="#AdicioneNumero" prefHeight="48.0" prefWidth="53.0" style="-fx-border-radius: 10;" text="9" />
+            <Button fx:id="btnMais" mnemonicParsing="false" onAction="#AdicioneOperadorMatematico" prefHeight="48.0" prefWidth="53.0" style="-fx-border-radius: 10;" text="+" />
+            <Button fx:id="btnQuatro" mnemonicParsing="false" onAction="#AdicioneNumero" prefHeight="48.0" prefWidth="53.0" style="-fx-border-radius: 10;" text="4" />
+            <Button fx:id="btnCinco" mnemonicParsing="false" onAction="#AdicioneNumero" prefHeight="48.0" prefWidth="53.0" style="-fx-border-radius: 10;" text="5" />
+            <Button fx:id="btnSeis" mnemonicParsing="false" onAction="#AdicioneNumero" prefHeight="48.0" prefWidth="53.0" style="-fx-border-radius: 10;" text="6" />
+            <Button fx:id="btnMenos" mnemonicParsing="false" onAction="#AdicioneOperadorMatematico" prefHeight="48.0" prefWidth="53.0" style="-fx-border-radius: 10;" text="-" />
+            <Button fx:id="btnUm" mnemonicParsing="false" onAction="#AdicioneNumero" prefHeight="48.0" prefWidth="53.0" style="-fx-border-radius: 10;" text="1" />
+            <Button fx:id="btnDois" mnemonicParsing="false" onAction="#AdicioneNumero" prefHeight="48.0" prefWidth="53.0" style="-fx-border-radius: 10;" text="2" />
+            <Button fx:id="btnTres" mnemonicParsing="false" onAction="#AdicioneNumero" prefHeight="48.0" prefWidth="53.0" style="-fx-border-radius: 10;" text="3" />
+            <Button fx:id="btnMultiplicar" mnemonicParsing="false" onAction="#AdicioneOperadorMatematico" prefHeight="48.0" prefWidth="53.0" style="-fx-border-radius: 10;" text="*" />
+            <Button fx:id="btnIgual" mnemonicParsing="false" onAction="#Calcule" prefHeight="48.0" prefWidth="53.0" style="-fx-border-radius: 10;" text="=" />
+            <Button fx:id="btnZero" mnemonicParsing="false" onAction="#AdicioneNumero" prefHeight="48.0" prefWidth="53.0" style="-fx-border-radius: 10;" text="0" />
+            <Button fx:id="btnApagar" mnemonicParsing="false" onAction="#Apague" prefHeight="48.0" prefWidth="53.0" style="-fx-border-radius: 10;" text="&lt;&lt;" />
+            <Button fx:id="btnDividir" mnemonicParsing="false" onAction="#AdicioneOperadorMatematico" prefHeight="48.0" prefWidth="53.0" style="-fx-border-radius: 10;" text="/" />
          </children>
       </FlowPane>
    </children>

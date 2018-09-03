@@ -6,6 +6,7 @@ import javafx.stage.Stage;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.control.*;
 
 public class Main extends Application {
 	@Override
@@ -13,7 +14,7 @@ public class Main extends Application {
 		try {
 			System.out.println("Inicio Start");
 			AnchorPane root = (AnchorPane) FXMLLoader.load(getClass().getResource("view/FXMLCalculadora.fxml"));
-			Scene scene = new Scene(root,218,276);
+			Scene scene = new Scene(root,336,388);
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			primaryStage.setScene(scene);
 			primaryStage.show();
