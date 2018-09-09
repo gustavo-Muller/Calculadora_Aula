@@ -5,22 +5,29 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="388.0" prefWidth="336.0" style="-fx-background-color: gray;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.unialfa.aula.controller.CalculadoraController">
    <children>
       <FlowPane layoutY="1.0" prefHeight="386.0" prefWidth="333.0">
          <children>
-            <JFXTextField fx:id="txtSecundario" prefHeight="69.0" prefWidth="336.0" style="-fx-background-color: white;" />
-            <JFXTextField fx:id="txtPrincipal" prefHeight="69.0" prefWidth="336.0" style="-fx-background-color: white;">
+            <JFXTextField fx:id="txtSecundario" alignment="CENTER_RIGHT" prefHeight="69.0" prefWidth="336.0" style="-fx-background-color: white;">
+               <font>
+                  <Font size="16.0" />
+               </font></JFXTextField>
+            <JFXTextField fx:id="txtPrincipal" alignment="CENTER_RIGHT" prefHeight="69.0" prefWidth="336.0" style="-fx-background-color: white;">
                <FlowPane.margin>
                   <Insets bottom="1.0" />
                </FlowPane.margin>
+               <font>
+                  <Font name="Arial" size="16.0" />
+               </font>
             </JFXTextField>
             <JFXButton fx:id="btnSete" onAction="#AdicioneNumero" prefHeight="62.0" prefWidth="67.0" style="-fx-background-color: lightgray; -fx-border-color: gray;" text="7" />
             <JFXButton fx:id="btnOito" onAction="#AdicioneNumero" prefHeight="62.0" prefWidth="67.0" style="-fx-background-color: lightgray; -fx-border-color: gray;" text="8" />
             <JFXButton fx:id="btnNove" onAction="#AdicioneNumero" prefHeight="62.0" prefWidth="67.0" style="-fx-background-color: lightgray; -fx-border-color: gray;" text="9" />
             <JFXButton fx:id="btnApagar" onAction="#Apague" prefHeight="62.0" prefWidth="67.0" style="-fx-background-color: lightgray; -fx-border-color: gray;" text="&lt;&lt;" />
-            <JFXButton fx:id="btnLimpar" onAction="#LimpeValores" prefHeight="62.0" prefWidth="67.0" style="-fx-background-color: lightgray; -fx-border-color: gray;" text="CLEAR" />
+            <JFXButton fx:id="btnLimpar" onAction="#LimpeValores" prefHeight="62.0" prefWidth="67.0" style="-fx-background-color: lightgray; -fx-border-color: gray;" text="Limpar" />
             <JFXButton fx:id="btnQuatro" onAction="#AdicioneNumero" prefHeight="62.0" prefWidth="67.0" style="-fx-background-color: lightgray; -fx-border-color: gray;" text="4" />
             <JFXButton fx:id="btnCinco" onAction="#AdicioneNumero" prefHeight="62.0" prefWidth="67.0" style="-fx-background-color: lightgray; -fx-border-color: gray;" text="5" />
             <JFXButton fx:id="btnSeis" onAction="#AdicioneNumero" prefHeight="62.0" prefWidth="67.0" style="-fx-background-color: lightgray; -fx-border-color: gray;" text="6" />
@@ -31,9 +38,9 @@
             <JFXButton fx:id="btnTres" onAction="#AdicioneNumero" prefHeight="62.0" prefWidth="67.0" style="-fx-background-color: lightgray; -fx-border-color: gray;" text="3" />
             <JFXButton fx:id="btnMultiplicar" onAction="#AdicioneOperadorMatematico" prefHeight="62.0" prefWidth="67.0" style="-fx-background-color: lightgray; -fx-border-color: gray;" text="*" />
             <JFXButton fx:id="btnDividir" onAction="#AdicioneOperadorMatematico" prefHeight="62.0" prefWidth="67.0" style="-fx-background-color: lightgray; -fx-border-color: gray;" text="/" />
+            <JFXButton fx:id="btnNegatvo" onAction="#MudeParaNegativoOuPositivo" prefHeight="62.0" prefWidth="67.0" style="-fx-background-color: lightgray; -fx-border-color: gray;" text="+/-" />
             <JFXButton fx:id="btnZero" onAction="#AdicioneNumero" prefHeight="62.0" prefWidth="67.0" style="-fx-background-color: lightgray; -fx-border-color: gray;" text="0" />
-            <JFXButton fx:id="btnParentesesEsq" prefHeight="62.0" prefWidth="67.0" style="-fx-background-color: lightgray; -fx-border-color: gray;" text="(" />
-            <JFXButton fx:id="btnParentesesDir" prefHeight="62.0" prefWidth="67.0" style="-fx-background-color: lightgray; -fx-border-color: gray;" text=")" />
+            <JFXButton fx:id="btnPonto" onAction="#AdicionePonte" prefHeight="62.0" prefWidth="67.0" style="-fx-background-color: lightgray; -fx-border-color: gray;" text="." />
             <JFXButton fx:id="btnIgual" onAction="#Calcule" prefHeight="62.0" prefWidth="135.0" style="-fx-background-color: lightgray; -fx-border-color: gray;" text="=" />
          </children>
       </FlowPane>

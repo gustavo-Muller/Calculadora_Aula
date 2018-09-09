@@ -5,8 +5,6 @@ import java.util.Arrays;
 import java.util.List;
 
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
@@ -22,7 +20,8 @@ public class CalculadoraController {
 	
 	@FXML
 	private Button btnSete, btnOito, btnNove, btnMais, btnQuatro, btnCinco, btnSeis, btnMenos, btnUm, btnDois, 
-	btnTres, btnMultiplicar, btnIgual, btnZero, btnApagar, btnDividir, btnParentesesEsq, btnParentesesDir, btnLimpar;
+	btnTres, btnMultiplicar, btnIgual, btnZero, btnApagar, btnDividir, btnParentesesEsq, btnParentesesDir, btnLimpar, 
+	btnNegatvo, btnPonto;
 	
 	@FXML
 	private TextField txtPrincipal, txtSecundario;
@@ -45,20 +44,17 @@ public class CalculadoraController {
 	}
 	
 	private void ImprivaValorNaTela(TextField txt) {
-		StringBuilder texto = new StringBuilder();
-		_valor.forEach(v -> texto.append(v));
-		txt.setText(texto.toString());
+		StringBuilder valor = new StringBuilder();
+		_valor.forEach(v -> valor.append(v));
+
+		txt.setText(valor.toString());
 	}
 	
 	
 	@FXML
 	private void AdicioneOperadorMatematico() {
 		
-		if(_valor.isEmpty()) {
-			if(btnMenos.isHover()) {
-				_valor.add('-');
-			}
-		}else {
+
 			char ultimaPosicao = _valor.get(_valor.size() - 1);
 			
 			if(_operador.contains(ultimaPosicao)) 
@@ -70,14 +66,12 @@ public class CalculadoraController {
 			if(btnDividir.isHover()) ultimaPosicao = '/';
 			
 			_valor.add(ultimaPosicao);
-		}
+		
 		ImprivaValorNaTela(txtPrincipal);
 	}
 	
 	@FXML
 	private void Calcule() {
-		
-		
 		
 		List<String> operadores = new ArrayList<>();
 		List<Double> numeroCompleto = new ArrayList<>();
@@ -87,6 +81,10 @@ public class CalculadoraController {
 		for (Character numeroOuOperador : _valor) {
 			
 			if(_operador.contains(numeroOuOperador)){
+				if(operadores.size() == 0 && numero.length() == 0) {
+					numero.append(numeroOuOperador);
+					continue;
+				}
 				operadores.add(numeroOuOperador.toString());
 				numeroCompleto.add(Double.parseDouble(numero.toString()));
 				numero.setLength(0);
@@ -137,9 +135,43 @@ public class CalculadoraController {
 	}
 	
 	@FXML
+	private void AdicionePonte() {
+		boolean podeAdicionar = false;
+		if(_valor.contains('.')) {
+			for (Character operador : _operador) {
+				if(_valor.contains(operador)) {
+					podeAdicionar = true;
+					break;
+				}
+			}
+			if(!podeAdicionar) return;
+		}
+		_valor.add('.');
+		ImprivaValorNaTela(txtPrincipal);
+	}
+	
+	@FXML
+	private void MudeParaNegativoOuPositivo() {
+		if(_valor.get(0).equals('-')) {
+			_valor.remove(0);
+			return;
+		}else {
+			for (Character operador : _operador) {
+				if(_valor.contains(operador)) {
+					return;
+				}
+			}
+		}
+		
+		_valor.add(0, '-');
+		ImprivaValorNaTela(txtPrincipal);
+	}
+	
+	@FXML
 	private void LimpeValores() {
 		_valor.clear();
 		txtPrincipal.clear();
+		txtSecundario.clear();
 	}
 	
 	private void ConvertaInteiroParaChar(double valor) {
@@ -158,7 +190,6 @@ public class CalculadoraController {
 			LimpeValores();
 			return;
 		}
-		
 		int tamanho = _valor.size();
 		char valorRemovido = _valor.remove(tamanho - 1);
 
