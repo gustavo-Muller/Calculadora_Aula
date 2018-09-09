@@ -98,7 +98,7 @@ public class CalculadoraController {
 			numero.setLength(0);
 		}
 
-		if(_valor.size() < 2 && operadores.isEmpty()) return;
+		if(_valor.size() < 2 || operadores.isEmpty()) return;
 		
 		double valorAnterior = numeroCompleto.remove(0);
 		for (Double valor : numeroCompleto) {
@@ -136,10 +136,21 @@ public class CalculadoraController {
 	
 	@FXML
 	private void AdicionePonte() {
+		List<Character> copiaValor = new ArrayList<>();
+		copiaValor.addAll(_valor);
+		
+		char primeiroValor = ' ';
+		for (Character values : _valor) {
+			primeiroValor = values;
+			break;
+		}
+		if(primeiroValor == '-') copiaValor.remove(0);
+		
 		boolean podeAdicionar = false;
-		if(_valor.contains('.')) {
+		if(copiaValor.contains('.')) {
 			for (Character operador : _operador) {
-				if(_valor.contains(operador)) {
+				if(copiaValor.contains(operador)) {
+					
 					podeAdicionar = true;
 					break;
 				}
@@ -152,8 +163,15 @@ public class CalculadoraController {
 	
 	@FXML
 	private void MudeParaNegativoOuPositivo() {
-		if(_valor.get(0).equals('-')) {
-			_valor.remove(0);
+		char primeiroValor = ' ';
+		for (Character values : _valor) {
+			primeiroValor = values;
+			break;
+		}
+	
+		if(primeiroValor == '-') {
+			primeiroValor = _valor.remove(0);
+			ImprivaValorNaTela(txtPrincipal);
 			return;
 		}else {
 			for (Character operador : _operador) {
@@ -191,7 +209,7 @@ public class CalculadoraController {
 			return;
 		}
 		int tamanho = _valor.size();
-		char valorRemovido = _valor.remove(tamanho - 1);
+		_valor.remove(tamanho - 1);
 
 		ImprivaValorNaTela(txtPrincipal);
 	}
